@@ -1,8 +1,8 @@
-{
+£{
   "services": [
     {
       "name": "alpha-api",
-      "entry": "service.js",
+      "entry": "index.js",
       "price": "0.0005"
     }
   ]
