@@ -1,8 +1,8 @@
-import express from "express";
+const express = require("express");
 
 const app = express();
 
-// API KEY (taruh DI SINI)
+// API KEY
 const API_KEY = "my-x402-api-production.up.railway.app";
 
 app.use((req, res, next) => {
@@ -13,18 +13,23 @@ app.use((req, res, next) => {
   next();
 });
 
-// endpoint
+// ROUTES
 app.get("/", (req, res) => {
-  res.json({ message: "API jalan 🚀" });
+  res.json({
+    status: "API aktif 🚀",
+    message: "Gunakan /alpha"
+  });
 });
 
 app.get("/alpha", (req, res) => {
-  res.json({ alpha: "Airdrop potensial 🔥" });
+  res.json({
+    alpha: "Airdrop potensial 🔥"
+  });
 });
 
-// PORT (WAJIB)
+// PORT
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log("Server running");
+  console.log("Server running on port", PORT);
 });
