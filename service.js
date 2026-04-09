@@ -2,14 +2,12 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("API hidup 🚀");
-});
-
-app.get("/alpha", (req, res) => {
-  res.json({ alpha: "OK 🔥" });
+  res.send("OK 🚀");
 });
 
 const PORT = process.env.PORT;
+
+console.log("PORT dari Railway:", PORT);
 
 if (!PORT) {
   console.error("PORT tidak ditemukan!");
