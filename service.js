@@ -19,3 +19,7 @@ if (!PORT) {
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
 });
+app.get("/", (req, res) => {
+  console.log("Request masuk ke /");
+  res.send("API hidup 🚀");
+});
