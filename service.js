@@ -1,5 +1,13 @@
 import express from "express";
+const API_KEY = "https://my-x402-api-production.up.railway.app/";
 
+app.use((req, res, next) => {
+  const key = req.headers["x-api-key"];
+  if (key !== API_KEY) {
+    return res.status(403).json({ error: "Unauthorized" });
+  }
+  next();
+});
 const app = express();
 
 app.get("/", (req, res) => {
