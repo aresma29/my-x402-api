@@ -1,5 +1,9 @@
 import express from "express";
-const API_KEY = "https://my-x402-api-production.up.railway.app/";
+
+const app = express();
+
+// API KEY (taruh DI SINI)
+const API_KEY = "my-x402-api-production.up.railway.app";
 
 app.use((req, res, next) => {
   const key = req.headers["x-api-key"];
@@ -8,16 +12,19 @@ app.use((req, res, next) => {
   }
   next();
 });
-const app = express();
 
+// endpoint
 app.get("/", (req, res) => {
   res.json({ message: "API jalan 🚀" });
 });
 
 app.get("/alpha", (req, res) => {
-  res.json({ alpha: "Airdrop potensial hari ini 🔥" });
+  res.json({ alpha: "Airdrop potensial 🔥" });
 });
 
-app.listen(3000, () => {
+// PORT (WAJIB)
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
   console.log("Server running");
 });
