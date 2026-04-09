@@ -12,14 +12,10 @@ app.get("/alpha", (req, res) => {
 const PORT = process.env.PORT;
 
 if (!PORT) {
-  console.error("PORT tidak ditemukan dari Railway!");
+  console.error("PORT tidak ditemukan!");
   process.exit(1);
 }
 
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
-});
-app.get("/", (req, res) => {
-  console.log("Request masuk ke /");
-  res.send("API hidup 🚀");
 });

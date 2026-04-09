@@ -1,6 +1,7 @@
 {
-  "name": "x402-api",
+  "name": "my-app",
   "version": "1.0.0",
+  "main": "service.js",
   "scripts": {
     "start": "node service.js"
   },
