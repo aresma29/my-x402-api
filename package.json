@@ -1,6 +1,9 @@
 {
   "name": "x402-api",
   "version": "1.0.0",
+  "scripts": {
+    "start": "node service.js"
+  },
   "dependencies": {
     "express": "^4.18.2"
   }
